@@ -1,7 +1,6 @@
-# SoanVision
-# Galería de Imágenes
+## SoanVision
 
-# Descripción
+## Descripción
 
 Este proyecto es una galería de imágenes construida utilizando HTML, CSS y JavaScript, con la ayuda de la herramienta de empaquetado Webpack. La galería muestra una selección de imágenes de una API de imágenes pública y permite al usuario filtrarlas por categorías y etiquetas.
 
