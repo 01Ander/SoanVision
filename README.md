@@ -12,7 +12,7 @@ Este proyecto es una galería de imágenes construida utilizando HTML, CSS y Jav
 - Paginación de resultados de búsqueda.
 - Responsive para dispositivos móviles.
 
-# Tecnologías utilizadas
+## Tecnologías utilizadas
 
 - HTML
 - CSS
@@ -20,7 +20,9 @@ Este proyecto es una galería de imágenes construida utilizando HTML, CSS y Jav
 - JavaScript
 - Webpack
 
+## API
 
+La API que se utilizara para el proyecto sera: [Flickr API](https://www.flickr.com/services/api/).
 ## Requerimientos
 
 - Node.js
