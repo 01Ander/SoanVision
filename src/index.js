@@ -1,1 +1,1 @@
-import './sass/reset.sass';
+import '../src/sass/reset.sass';
