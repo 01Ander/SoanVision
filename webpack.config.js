@@ -41,16 +41,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.svg/,
-        use: [
-          {
-            loader: 'svg-url-loader',
-            options: {
-              limit: 10000,
-              name: 'assets/svg/[name].[contenthash:8].svg'
-            },
-          },
-        ],
+        test: /\.svg$/,
+        loader: 'file-loader',
+        options: {
+          name: 'static/img/[name].[hash].[ext]',
+        },
       },
       {
         test: /\.ttf$/,  // Tipos de fuentes a incluir
