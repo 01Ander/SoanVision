@@ -6,17 +6,17 @@ $blanco-antiguo: #F7F6F3
 
 @font-face
   font-family: 'Lora'
-  src: url('/src/fonts/Lora-Bold.ttf') format('ttf')
+  src: url('/src/fonts/Lora-Bold.ttf') format('truetype')
   font-weight: 700
   font-style: normal
 
 @mixin font-face($weight, $file, $style: normal)
   @font-face
     font-family: 'Lora'+$weight
-    src: url('/src/fonts/Lora-'+$file+'.ttf') format('ttf')
-    // font-weight: $weight
-    // font-style: $style
+    src: url('/src/fonts/Lora-'+$file+'.ttf') format('truetype')
+    font-weight: $weight
+    font-style: $style
 
 @include font-face('Regular', 'Regular', 'normal')
-@include font-face(700, 'Bold', 'normal')
+@include font-face('Bold', 'Bold', 'normal')
 
