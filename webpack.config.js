@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  mode: "development",
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
@@ -40,6 +39,14 @@ module.exports = {
           'sass-loader',
 
         ],
+      },
+      {
+        test: /\.svg/,
+        include: path.resolve(__dirname, "src"),
+        type: 'asset/inline',
+        generator: {
+          filename: 'static/images/[hash][ext][query]',
+        },
       },
     ],
   },
