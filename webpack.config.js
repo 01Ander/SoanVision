@@ -9,14 +9,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
-  // devServer: {
-  //   contentBase: path.join(__dirname, 'dist'),
-  //   // compress: true,
-  //   port: 9000,
-  //   // watchContentBase: true,
-  //   // open: true,
-  //   // progress: true
-  // },
+  devServer: {
+    // contentBase: path.join(__dirname, 'dist'),
+    // compress: true,
+    // port: 9000,
+    watchContentBase: true,
+    // open: true,
+    // progress: true
+  },
   module: {
     rules: [
       {
