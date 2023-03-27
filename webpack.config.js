@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
+  mode: "development",
   entry: './src/index.js',
   output: {
     filename: 'bundle.js',
@@ -10,12 +11,13 @@ module.exports = {
     clean: true,
   },
   devServer: {
-    // contentBase: path.join(__dirname, 'dist'),
-    // compress: true,
-    // port: 9000,
-    watchContentBase: true,
-    // open: true,
-    // progress: true
+    open: true,
+    watchFiles: {
+      paths: ['src'],
+      options: {
+        usePolling: true,
+      },
+    },
   },
   module: {
     rules: [

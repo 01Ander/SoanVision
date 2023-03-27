@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --mode=production",
     "dev": "webpack --mode=development",
-    "star": "webpack serve --mode=development --open --config=webpack.config.js"
+    "star": "webpack serve --config=webpack.config.js"
   },
   "keywords": [],
   "author": "",
