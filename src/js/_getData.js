@@ -12,9 +12,9 @@ const api = axios.create({
 
 const galleryContainer = document.querySelector('.gallery__container');
 
-export function random() {
+export function getPhotos() {
   api
-    .get('search?query=nature&per_page=10&page=1')
+    .get('search?query=nature&per_page=5&page=1')
     .then(res => {
       // console.log(res.data);
       // console.log(res.data.photos);

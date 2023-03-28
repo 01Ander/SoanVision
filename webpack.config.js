@@ -73,6 +73,10 @@ module.exports = {
       "fs": false,
       "path": require.resolve("path-browserify"),
       "os": require.resolve("os-browserify/browser")
-    }
+    },
+    extensions: ['.js'], // Agregar esta linea para indicar que resuelva archivos js
+    alias: {
+      '@': path.resolve(__dirname, 'src'), // Agregar esta linea para definir el alias
+    },
   }
 };
