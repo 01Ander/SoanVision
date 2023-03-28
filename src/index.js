@@ -9,8 +9,9 @@ function initApp() {
   configureUploadIcon();
   configureGithubIcon();
   configureNotionIcon();
-  getPhotos();
-  console.log('ready');
+  // getPhotos();
+  // console.log('ready');
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
+

@@ -1,6 +1,6 @@
 import axios from 'axios';
+import {openModal} from './_modal';
 
-const unsplashAccessKey = process.env.UNSPLASH_ACCESS_KEY;
 const API_KEY = process.env.API_KEY;
 
 const api = axios.create({
@@ -13,35 +13,43 @@ const api = axios.create({
 const galleryContainer = document.querySelector('.gallery__container');
 
 export function getPhotos() {
-  api
-    .get('search?query=nature&per_page=5&page=1')
+  api.get('curated?page=1&per_page=5')
     .then(res => {
-      // console.log(res.data);
-      // console.log(res.data.photos);
       const photos = res.data.photos;
-      console.log(photos);
+      // console.log(photos);
       const toRender = [];
 
       photos.forEach(element => {
+        const srcImage = element.src.original;
+        const autor = element.photographer;
+        // console.log(autor);
         const article = document.createElement('div');
+        const imgWrapper = document.createElement('div');
         const img = document.createElement('img');
 
         article.classList.add('gallery__image-container');
+        imgWrapper.classList.add('gallery__image-wrapper');
         img.classList.add('gallery__image');
-        img.src = element.src.original
 
-        article.appendChild(img)
+        imgWrapper.appendChild(img);
 
-        toRender.push(article)
+        img.addEventListener('load', () => {
+          imgWrapper.style.backgroundColor = 'transparent';
+        });
+
+        img.src = srcImage;
+        img.alt = element.alt;
+        article.appendChild(imgWrapper);
+        toRender.push(article);
+
+        img.addEventListener('click', () => {
+          openModal(srcImage, autor);
+        });
       });
-      galleryContainer.append(...toRender)
+      galleryContainer.append(...toRender);
     })
     .catch(error => {
       console.log(error);
     });
-
 }
-
-
-
 
